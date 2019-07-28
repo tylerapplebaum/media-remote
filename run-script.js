@@ -14,6 +14,7 @@ app.get("/getip", function (req, res) {
     .then(output => {
       //console.log(output);
       console.log(JSON.parse(output))
+      res.send(JSON.parse(output))
     })
     .catch(err => {
       console.log(err);

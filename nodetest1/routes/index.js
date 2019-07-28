@@ -9,8 +9,6 @@ router.get('/', function(req, res, next) {
 /* GET IPv4 page. */
 router.get('/getip', function(req, res) {
   res.render('getip', { ipv4address: "ipv4" });
-  res.statusCode = 200;
-  res.end();
 });
 
 module.exports = router;

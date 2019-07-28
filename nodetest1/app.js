@@ -34,6 +34,21 @@ app.get("/getip", function (req, res) {
     //console.log(output);
     console.log(JSON.parse(output))
     var ipv4 = JSON.parse(output)
+    res.send(ipv4)
+  })
+  .catch(err => {
+    console.log(err);
+    ps.dispose()
+  });
+})
+
+app.get("/tv", function (req, res) {
+  ps.addCommand('.././samsung.ps1');
+  ps.invoke()
+  .then(output => {
+    //console.log(output);
+    console.log(output)
+    res.send()
   })
   .catch(err => {
     console.log(err);
